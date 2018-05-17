@@ -12,12 +12,12 @@ We use the Alpha-Beta-Prune Algorithm to implement our AI agent.
 
 ## How to run game
 ```
-java maxconnect4 interactive [input_file] [computer-next/human-next] [depth]
+./maxconnect4 interactive [input_file] [computer-next/human-next] [depth]
 ```
 
 For example:
 ```
-java maxconnect4 interactive input1.txt computer-next 7
+./maxconnect4 interactive input1.txt computer-next 7
 ```
 
 - Argument interactive specifies that the program runs in interactive mode.
