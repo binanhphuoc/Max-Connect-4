@@ -7,9 +7,20 @@
 //
 
 #include <iostream>
+#include "State.hpp"
+#include "AlphaBetaPrune.hpp"
+#include "GameMode.hpp"
+
+using namespace std;
+using namespace AI;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    if (argc != 5)
+    {
+        cout << "Error: Too few arguments." << endl;
+        return 0;
+    }
+    GameMode game;
+    game.play(argv[1], argv[2], argv[3], argv[4]);
     return 0;
 }

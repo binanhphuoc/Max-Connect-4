@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------
+Evaluation function:
+
+eval(s) = 20	if s is terminal, and MAX wins. 
+eval(s) = -20	if s is terminal, and MAX loses.
+eval(s) = 0	if s is terminal, and the game is draw.
+
+Otherwise, s is non-terminal and is evaluated as follows:
+
+eval(s) = 0.7*(numMax(4) - numMin(4)) + 0.5*(numMax(3) - numMin(3)) + 0.3(numMax(2)-numMin(2)) + 0.1(numMax(1) - numMin(1))
+
+In which, numMax(i) is the number of four consecutive squares containing i number of MAX's chips, and numMin(i) is the number of four consecutive squares containing i number of MIN's chips.
+--------------------------------------------------------------------------------
+
+Explanation:
+
+The more number of four consecutive squares available to MAX than to MIN, the more options are available to MAX. This means MAX has higher chance of winning than MIN does.
+Let offset(i) = numMax(i) - numMin(i), in which i is the level of the offset.
+Comparing the weights of the 4 offsets, weight(offset(4)) > weight(offset(3) > weight(offset(2)) > weight(offset(1)). The reason behind these weights is that the higher level of the offset, the closer MAX is to a raise in his score.
